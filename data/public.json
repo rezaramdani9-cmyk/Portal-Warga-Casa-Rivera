@@ -1,10 +1,28 @@
 {
   "wa": "",
   "nama": "Perumahan Contoh Asri",
-  "tentang": {"teks": "Perumahan Contoh Asri adalah kawasan hunian yang dikelola bersama oleh warga. Portal ini memuat informasi umum dan layanan internal untuk warga."},
-  "tata": {"teks": "Pengelolaan kawasan dilakukan oleh pengurus warga dengan prinsip transparan dan akuntabel. Peraturan lingkungan dan struktur pengurus diumumkan melalui portal ini."},
-  "media": {"teks": "Dokumentasi kegiatan dan progres pembangunan fasilitas umum.", "gambar": []},
-  "produk": {"teks": "Informasi fasilitas umum dan kerja sama dengan mitra untuk layanan kawasan."},
-  "lapor": {"teks": "Laporan kegiatan dan kondisi fasilitas disampaikan secara berkala oleh pengurus."},
-  "kontak": {"teks": "Sekretariat Warga\nAlamat: (isi alamat)\nTelepon: (isi nomor)\nEmail: (isi email)"}
+  "tentang": {
+    "teks": "Perumahan Contoh Asri adalah kawasan hunian yang dikelola bersama oleh warga. Portal ini memuat informasi umum dan layanan internal untuk warga."
+  },
+  "tata": {
+    "teks": "Pengelolaan kawasan dilakukan oleh pengurus warga dengan prinsip transparan dan akuntabel. Peraturan lingkungan dan struktur pengurus diumumkan melalui portal ini."
+  },
+  "media": {
+    "teks": "Dokumentasi kegiatan dan progres pembangunan fasilitas umum.",
+    "gambar": [
+      {
+        "src": "images/mvyruytlh3r.jpg",
+        "cap": ""
+      }
+    ]
+  },
+  "produk": {
+    "teks": "Informasi fasilitas umum dan kerja sama dengan mitra untuk layanan kawasan."
+  },
+  "lapor": {
+    "teks": "Laporan kegiatan dan kondisi fasilitas disampaikan secara berkala oleh pengurus."
+  },
+  "kontak": {
+    "teks": "Sekretariat Warga\nAlamat: (isi alamat)\nTelepon: (isi nomor)\nEmail: (isi email)"
+  }
 }
