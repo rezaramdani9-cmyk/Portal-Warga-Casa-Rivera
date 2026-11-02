@@ -1,6 +1,6 @@
 {
   "wa": "",
-  "nama": "Perumahan Contoh Asri",
+  "nama": "Casa Rivera",
   "tentang": {
     "teks": "Perumahan Contoh Asri adalah kawasan hunian yang dikelola bersama oleh warga. Portal ini memuat informasi umum dan layanan internal untuk warga."
   },
@@ -19,5 +19,6 @@
   },
   "kontak": {
     "teks": "Sekretariat Warga\nAlamat: (isi alamat)\nTelepon: (isi nomor)\nEmail: (isi email)"
-  }
+  },
+  "tema": "Hitam-emas"
 }
