@@ -27,7 +27,15 @@
   },
   "tema": "Biru-hijau (bawaan)",
   "logo": "images/logo-mvyu1h2ct5s.png",
-  "org": [],
+  "org": [
+    {
+      "id": "mw03je2la4i",
+      "jabatan": "Ketua Paguyuban",
+      "nama": "no name",
+      "induk": "",
+      "urut": 1
+    }
+  ],
   "struktur": {
     "teks": "STRUKTUR PAGUYUBAN\nCASA RIVERA"
   }
