@@ -26,5 +26,9 @@
     "teks": "Sekretariat Warga\nAlamat: (isi alamat)\nTelepon: (isi nomor)\nEmail: (isi email)"
   },
   "tema": "Biru-hijau (bawaan)",
-  "logo": "images/logo-mvyu1h2ct5s.png"
+  "logo": "images/logo-mvyu1h2ct5s.png",
+  "org": [],
+  "struktur": {
+    "teks": "STRUKTUR PAGUYUBAN\nCASA RIVERA"
+  }
 }
