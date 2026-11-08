@@ -1,5 +1,5 @@
 {
-  "wa": "6285920763604",
+  "wa": "6281289097040",
   "nama": "Casa Rivera",
   "tentang": {
     "teks": "\"Casa Rivera BKT adalah kawasan hunian mandiri yang harmonis dan dikelola secara gotong royong oleh lebih dari 80 Kepala Keluarga (KK). Portal digital ini hadir sebagai pusat informasi, wadah koordinasi, serta layanan internal untuk mempererat kebersamaan seluruh warga.\""
@@ -101,5 +101,20 @@
   "struktur": {
     "teks": "STRUKTUR PAGUYUBAN\nCASA RIVERA"
   },
-  "hero": "images/hero-mw0alvywao9.jpg"
+  "hero": "images/hero-mw0alvywao9.jpg",
+  "nomor": [
+    {
+      "n": "Ketua",
+      "w": "6281289097040"
+    },
+    {
+      "n": "Wakil Ketua",
+      "w": "6282189313631"
+    },
+    {
+      "n": "Bendahara",
+      "w": "6281990160679"
+    }
+  ],
+  "wra": "6285920763604"
 }
