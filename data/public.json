@@ -27,7 +27,20 @@
   },
   "produk": {
     "teks": "Informasi fasilitas umum dan kerja sama dengan mitra untuk layanan kawasan.",
-    "gambar": []
+    "gambar": [
+      {
+        "src": "images/mw9zgmpxayl.jpg",
+        "cap": "",
+        "t": 1794272405692,
+        "z": 156429
+      },
+      {
+        "src": "images/mw9zgou4e0j.jpg",
+        "cap": "",
+        "t": 1794272407959,
+        "z": 19749
+      }
+    ]
   },
   "lapor": {
     "teks": "\"Informasi fasilitas umum, layanan warga, serta ruang kerja sama strategis dengan mitra terpilih guna mendukung kemandirian dan kenyamanan lingkungan kawasan Casa Rivera BKT.\""
