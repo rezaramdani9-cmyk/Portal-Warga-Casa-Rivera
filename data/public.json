@@ -10,7 +10,20 @@
   },
   "media": {
     "teks": "\"Dokumentasi kegiatan warga, galeri kebersamaan, serta progres pemeliharaan fasilitas umum perumahan tersaji lengkap di sini untuk merawat transparansi dan keaktifan warga.\"",
-    "gambar": []
+    "gambar": [
+      {
+        "src": "images/mw9zfs0f8yh.jpg",
+        "cap": "",
+        "t": 1794272366214,
+        "z": 156429
+      },
+      {
+        "src": "images/mw9zfudivqg.jpg",
+        "cap": "",
+        "t": 1794272368428,
+        "z": 19749
+      }
+    ]
   },
   "produk": {
     "teks": "Informasi fasilitas umum dan kerja sama dengan mitra untuk layanan kawasan.",
