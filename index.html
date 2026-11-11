@@ -181,7 +181,7 @@ umurTxt=b=>b==null?'-':b<12?b+' bln':b<60?Math.floor(b/12)+' th '+(b%12)+' bln':
 blokH=b=>(String(b||'').replace(/^blok\s*/i,'').match(/^[A-Za-z]+/)||[''])[0].toUpperCase(),
 CS=['Blok / rumah','Nama A-Z','Jenis kelamin','Umur: tua ke muda','Umur: muda ke tua'];
 window.fCetak=()=>{if(!fin())return;const hb=[...new Set(D.rumah.map(r=>blokH(r.blok)).filter(Boolean))].sort(nat);
- fm('Cetak data warga (PDF)',[['um','Umur (kosongkan = semua). Contoh: 0-5, 60-100, 60+ atau 17','text'],['jk','Jenis kelamin','select',['Semua','Laki-laki','Perempuan']],['bl','Blok','select',['Semua blok',...hb]],['hb','Yang dicetak','select',['Semua anggota keluarga','Kepala keluarga saja']],['so','Urutkan berdasarkan','select',CS],['hp','Sertakan No. HP','select',['Tidak','Ya']]],x=>cetakWarga(x),{so:CS[0],hp:'Tidak'},'Buka halaman cetak')};
+ fm('Cetak data warga (PDF)',[['um','Umur','text'],['jk','Jenis kelamin','select',['Semua','Laki-laki','Perempuan']],['bl','Blok','select',['Semua blok',...hb]],['hb','Yang dicetak','select',['Semua anggota keluarga','Kepala keluarga saja']],['so','Urutkan berdasarkan','select',CS],['hp','Sertakan No. HP','select',['Tidak','Ya']]],x=>cetakWarga(x),{so:CS[0],hp:'Tidak'},'Buka halaman cetak')};
 function cetakWarga(x){
  const q0=String(x.um||'').replace(/\s+/g,''),pm=q0?/^(\d+)?(?:(-|–)(\d+)?|(\+))?$/.exec(q0):null;let lo=0,hi=999;
  if(q0){if(!pm||!/\d/.test(q0)){msg('Format umur tidak dikenali. Contoh: 0-5, 60-100, 60+ atau 17');return false}if(pm[2]){lo=pm[1]===undefined?0:+pm[1];hi=pm[3]===undefined?999:+pm[3]}else if(pm[4]){lo=+pm[1]}else lo=hi=+pm[1];if(lo>hi){msg('Angka pertama harus lebih kecil dari angka kedua');return false}}
