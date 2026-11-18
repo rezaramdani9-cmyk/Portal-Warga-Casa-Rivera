@@ -58,7 +58,8 @@ footer{background:var(--dk);color:#cde;text-align:center;font-size:12px;padding:
 @media print{.rv{opacity:1!important;transform:none!important}}
 /* galeri carousel (Ruang Media & Produk) */
 .cfw{position:relative;margin:18px calc(50% - 50vw) 0;overflow:hidden;padding:26px 0 74px;--w:min(46%,620px);--h:340px}
-#pub section{overflow-x:clip}
+#pub section{overflow-x:clip;min-height:calc(100vh - var(--hh,66px));min-height:calc(100svh - var(--hh,66px));display:flex;flex-direction:column;justify-content:center;scroll-margin-top:var(--hh,66px)}
+#pub section>div{width:100%}
 .cf{position:relative;height:calc(var(--h) + 36px)}
 .cfs{position:absolute;top:0;left:50%;width:var(--w);margin:0 0 0 calc(var(--w) / -2);height:var(--h);cursor:pointer;transition:transform .6s cubic-bezier(.4,0,.2,1),opacity .45s ease}
 .cfw:not(.rd) .cfs{opacity:0!important;transition:none}
