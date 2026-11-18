@@ -39,25 +39,31 @@ footer{background:var(--dk);color:#cde;text-align:center;font-size:12px;padding:
 }
 @media (prefers-reduced-motion:reduce){.rail figure,.gal figure,.mmg figure,.rail figure img,.gal figure img,.mmg figure img{transition:none}.rail figure:hover,.gal figure:hover,.mmg figure:hover{transform:none}.rail figure:hover img,.gal figure:hover img,.mmg figure:hover img{transform:none}}
 
-/* galeri carousel gelap (Ruang Media & Produk) */
-.cfw{position:relative;margin-top:18px;background:#050506;border-radius:16px;overflow:hidden;padding:26px 0 74px;--w:46%;--h:340px}
+/* animasi masuk/keluar bagian halaman saat discroll */
+.rv{opacity:0;transform:translateY(44px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.out-up{transform:translateY(-44px)}
+.rv.in{opacity:1;transform:none}
+@media print{.rv{opacity:1!important;transform:none!important}}
+/* galeri carousel (Ruang Media & Produk) */
+.cfw{position:relative;margin:18px calc(50% - 50vw) 0;overflow:hidden;padding:26px 0 74px;--w:min(46%,620px);--h:340px}
+#pub section{overflow-x:clip}
 .cf{position:relative;height:calc(var(--h) + 36px)}
 .cfs{position:absolute;top:0;left:50%;width:var(--w);margin:0 0 0 calc(var(--w) / -2);height:var(--h);cursor:pointer;transition:transform .6s cubic-bezier(.4,0,.2,1),opacity .45s ease}
 .cfw:not(.rd) .cfs{opacity:0!important;transition:none}
 .cfm{position:relative;width:100%;height:100%;border-radius:14px;overflow:hidden;background:#111;transition:filter .6s ease}
 .cfm img,.cfm video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-.cfs:not(.on) .cfm{filter:brightness(.38)}
+.cfs:not(.on) .cfm{filter:brightness(.5) saturate(.85)}
 .cfm b{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:44px;text-shadow:0 2px 10px #000;pointer-events:none}
 .cfc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;color:#fff;background:linear-gradient(#0000002e,#0000005c);opacity:0;transition:opacity .35s ease;pointer-events:none}
 .cfc span{font:300 clamp(16px,2.6vw,32px)/1.25 Montserrat,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 2px 12px #000a;transform:translateY(8px);transition:transform .35s ease}
-.cfl{position:absolute;top:calc(100% + 14px);left:6%;right:6%;text-align:center;color:#e8e8e8;font:500 12px/1.5 Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:0;transition:opacity .35s ease;pointer-events:none}
+.cfl{position:absolute;top:calc(100% + 14px);left:6%;right:6%;text-align:center;color:#334;font:500 12px/1.5 Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:0;transition:opacity .35s ease;pointer-events:none}
 .cfs:not(.on) .cfl{display:none}
 .cfs.on:hover .cfc,.cfs.on:hover .cfl{opacity:1}
 .cfs.on:hover .cfc span{transform:none}
 .cfs.on:hover .cfm img,.cfs.on:hover .cfm video{transform:scale(1.05)}
 .cfs .hvf{height:100%;width:100%}
-.cfb{position:absolute;top:calc(var(--h) / 2 + 23px);width:42px;height:42px;border:1.5px solid #fff;border-radius:50%;background:#0006;color:#fff;font-size:22px;line-height:1;cursor:pointer;z-index:6;padding:0 0 3px;transition:background .2s}
-.cfb:hover{background:#fff3}
+.cfb{position:absolute;top:calc(var(--h) / 2 + 23px);width:42px;height:42px;border:1.5px solid #fff;border-radius:50%;background:#000a;color:#fff;font-size:22px;line-height:1;cursor:pointer;z-index:6;padding:0 0 3px;transition:background .2s}
+.cfb:hover{background:#000d}
 .cfb.cp{left:36px}.cfb.cn{right:36px}
 @media (max-width:640px){.cfw{--w:72%;--h:220px;padding:18px 0 60px}.cfb{width:34px;height:34px;font-size:18px}.cfb.cp{left:8px}.cfb.cn{right:8px}}
 @media (hover:none){.cfs.on .cfc{opacity:1;align-items:flex-end;padding-bottom:14px;background:linear-gradient(#0000 50%,#000b)}.cfs.on .cfc span{font-size:14px;transform:none}.cfs.on .cfl{opacity:1}}
@@ -475,6 +481,9 @@ const EYE='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="c
 function eyes(){document.querySelectorAll('input[type=password]:not([data-eye])').forEach(i=>{i.dataset.eye=1;const w=document.createElement('span');w.className='pw';i.parentNode.insertBefore(w,i);w.appendChild(i);const b=document.createElement('button');b.type='button';b.className='eye';b.title='Lihat password';b.setAttribute('aria-label','Lihat password');b.innerHTML=EYE;b.onclick=()=>{const t=i.type==='password';i.type=t?'text':'password';b.innerHTML=t?EYEX:EYE;b.title=t?'Sembunyikan password':'Lihat password';i.focus()};w.appendChild(b)})}
 new MutationObserver(eyes).observe(document.body,{childList:true,subtree:true});eyes();
 
+const RVOK=!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window;let RVO=null;
+function rvInit(){if(!RVOK)return;if(!RVO)RVO=new IntersectionObserver(es=>es.forEach(e=>{const t=e.target;if(e.isIntersecting){t.classList.remove('out-up');t.classList.add('in')}else{t.classList.remove('in');t.classList.toggle('out-up',e.boundingClientRect.top<0)}}),{rootMargin:'-10% 0px -10% 0px'});document.querySelectorAll('#pub section>div:not(.rv)').forEach(d=>{d.classList.add('rv');RVO.observe(d)})}
+let rvT=0;addEventListener('scroll',()=>{if(rvT||!RVOK)return;rvT=requestAnimationFrame(()=>{rvT=0;document.querySelectorAll('.rv:not(.in)').forEach(t=>t.classList.toggle('out-up',t.getBoundingClientRect().top<0))})},{passive:true});
 /* struktur organisasi: otomatis mengecil agar muat lebar layar, tanpa geser */
 const OZ=[1,1.5,2.2,3.2],OZMAX=1.4;
 function fitOrg(){document.querySelectorAll('.org').forEach(o=>{const t=o.firstElementChild;if(!t)return;const cw=o.offsetWidth,nw=t.offsetWidth,nh=t.offsetHeight;if(!cw||!nw)return;const z=o._z||1,fit=Math.min(1,cw/nw),sc=Math.min(Math.max(fit,OZMAX),fit*z),zm=sc>fit+.001;o.classList.toggle('zm',zm);if(!zm){o.scrollLeft=0;o.scrollTop=0}t.style.transform=`scale(${sc})`;t.style.marginLeft=Math.max(0,(cw-nw*sc)/2)+'px';o.style.height=(zm?Math.min(Math.ceil(nh*sc),Math.round(innerHeight*.7)):Math.ceil(nh*sc))+'px';o._w=cw;const b=o.previousElementSibling;if(b&&b.classList.contains('ozb')){b.querySelector('.ozl').textContent=Math.round(sc*100)+'%';b.querySelector('.ozm').disabled=z<=1;b.querySelector('.ozp').disabled=z>=OZ[OZ.length-1]||sc>=OZMAX-.001}if(!o._ro&&window.ResizeObserver){o._ro=new ResizeObserver(()=>{if(o._w!==o.offsetWidth)requestAnimationFrame(fitOrg)});o._ro.observe(o)}})}
@@ -486,7 +495,7 @@ window.orgInfo=id=>{const O=P.org||[],x=O.find(a=>a.id===id);if(!x)return;const 
  addEventListener('mousemove',e=>{if(!d)return;const dx=e.clientX-d.x,dy=e.clientY-d.y;if(Math.abs(dx)+Math.abs(dy)>5)d.m=1;if(d.m){d.o.scrollLeft=d.l-dx;d.o.scrollTop=d.t-dy;e.preventDefault()}});
  addEventListener('mouseup',()=>{if(d&&d.m){const o=d.o;o._nc=1;setTimeout(()=>{o._nc=0},0)}d=null});
  document.addEventListener('click',e=>{const o=e.target.closest&&e.target.closest('.org');if(o&&o._nc){e.stopPropagation();e.preventDefault()}},true)}
-{let q=0;const go=()=>{if(q)return;q=requestAnimationFrame(()=>{q=0;fitOrg();cfInit()})};new MutationObserver(go).observe(document.body,{childList:true,subtree:true});addEventListener('resize',go);addEventListener('load',go);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(go);go()}
+{let q=0;const go=()=>{if(q)return;q=requestAnimationFrame(()=>{q=0;fitOrg();cfInit();rvInit()})};new MutationObserver(go).observe(document.body,{childList:true,subtree:true});addEventListener('resize',go);addEventListener('load',go);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(go);go()}
 /* hover galeri: video diputar otomatis (tanpa suara), thumbnail YouTube jadi pemutar mini */
 if(matchMedia('(hover:hover)').matches){let T=0,cur=null;const SEL='.cfs.on,.gal figure,.mmg figure',
  stop=f=>{clearTimeout(T);if(!f)return;f.classList.remove('vp');const v=f.querySelector('video');if(v){v.pause();try{v.currentTime=.1}catch(e){}}const y=f.querySelector('.hvf');if(y)y.remove()};
