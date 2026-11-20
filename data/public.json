@@ -69,7 +69,12 @@
   },
   "kontak": {
     "teks": "Sekretariat Warga\nAlamat\nRT.1/RW.21, Sagara Makmur, Kec. Tarumajaya, Kabupaten Bekasi, Jawa Barat 14150",
-    "judul": "Kontak Kami"
+    "judul": "Kontak Kami",
+    "ukj": "Sedang",
+    "ukt": "Sedang",
+    "rata": "Tengah",
+    "pos": "Tengah",
+    "an": "Dari atas"
   },
   "tema": "Biru-hijau (bawaan)",
   "logo": "images/logo-mvyu1h2ct5s.png",
