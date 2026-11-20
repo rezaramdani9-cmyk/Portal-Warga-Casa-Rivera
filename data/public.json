@@ -56,7 +56,13 @@
   },
   "produk": {
     "teks": "Informasi fasilitas umum dan kerja sama dengan mitra untuk layanan kawasan.",
-    "gambar": []
+    "gambar": [],
+    "judul": "Produk & Kemitraan",
+    "ukj": "Sangat besar",
+    "ukt": "Sedang",
+    "rata": "Tengah",
+    "pos": "Tengah",
+    "an": "Dari bawah"
   },
   "lapor": {
     "teks": "\"Informasi fasilitas umum, layanan warga, serta ruang kerja sama strategis dengan mitra terpilih guna mendukung kemandirian dan kenyamanan lingkungan kawasan Casa Rivera BKT.\""
